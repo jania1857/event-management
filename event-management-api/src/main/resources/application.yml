@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/event_management_system
+    username: jania
+    password: jania
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      dll-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
