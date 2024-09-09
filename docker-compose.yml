@@ -1,0 +1,24 @@
+services:
+  postgres:
+    container_name: postgres-sql-ems
+    image: postgres
+    environment:
+      POSTGRES_USER: jania
+      POSTGRES_PASSWORD: jania
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: event_management_system
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - ems-network
+    restart: unless-stopped
+
+networks:
+  ems-network:
+    driver: bridge
+
+volumes:
+  postgres:
+    driver: local
